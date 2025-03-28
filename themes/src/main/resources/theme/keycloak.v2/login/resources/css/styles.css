@@ -1,6 +1,6 @@
 :root {
-    --keycloak-logo-url: url('../img/keycloak-logo-text.svg');
-    --keycloak-bg-logo-url: url("../img/keycloak-bg-darken.svg");
+    --keycloak-bg-logo-url: url('https://wa.beep.gov.pk/themes/element/img/backgrounds/lake.jpg');
+    --keycloak-logo-url: url("https://firebasestorage.googleapis.com/v0/b/laaleh-2451e.appspot.com/o/beep.svg?alt=media&token=3847db46-30c6-4a1d-8ef4-58fbcbaa7835");
     --keycloak-logo-height: 63px;
     --keycloak-logo-width: 300px;
     --keycloak-card-top-color: var(--pf-v5-global--palette--blue-400);
@@ -13,14 +13,20 @@
 }
 
 .pf-v5-c-login__main-header {
-    border-top: 4px solid var(--keycloak-card-top-color);
+    /* border-top: 4px solid var(--keycloak-card-top-color); */
+}
+.loginbutton{
+    background-color: #488D41;
+    border-radius: 10px;
 }
 
 /* Info section - top margin + bottom padding */
 .pf-v5-c-login__main-footer-band:first-child {
     margin-block-start: var(--pf-v5-global--spacer--lg);
 }
-
+.borderclass{
+    border-color: 2px solid #488D41;
+}
 .pf-v5-c-login__main-footer-band:last-child {
     padding-bottom: 0;
 }
@@ -33,12 +39,12 @@
 }
 
 div.kc-logo-text {
-    background-image: var(--keycloak-logo-url);
-    height: var(--keycloak-logo-height);
-    width: var(--keycloak-logo-width);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0 auto;
+	background-image: var(--keycloak-logo-url);
+	height: 140px;
+	width: var(--keycloak-logo-width);
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin: 0 auto;
 }
 
 div.kc-logo-text span {
