@@ -13,11 +13,12 @@
 }
 
 .pf-v5-c-login__main-header {
-    /* border-top: 4px solid var(--keycloak-card-top-color); */
+    border-top: 4px solid var(--keycloak-card-top-color);
 }
-.loginbutton{
+.loginbutton {
     background-color: #488D41;
     border-radius: 10px;
+    color: white;
 }
 
 /* Info section - top margin + bottom padding */

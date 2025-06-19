@@ -327,7 +327,7 @@ export const RealmSettingsTabs = () => {
           aria-label="realm-settings-tabs"
           defaultLocation={toRealmSettings({
             realm: realmName,
-            tab: "general",
+            tab: "email",
           })}
         >
           <Tab
@@ -351,14 +351,14 @@ export const RealmSettingsTabs = () => {
           >
             <RealmSettingsEmailTab realm={realm!} save={save} />
           </Tab>
-          <Tab
+          {/* <Tab
             title={<TabTitleText>{t("themes")}</TabTitleText>}
             data-testid="rs-themes-tab"
             {...themesTab}
           >
             <ThemesTab realm={realm!} save={save} />
-          </Tab>
-          <Tab
+          </Tab> */}
+          {/* <Tab
             title={<TabTitleText>{t("keys")}</TabTitleText>}
             data-testid="rs-keys-tab"
             {...keysTab}
@@ -462,7 +462,7 @@ export const RealmSettingsTabs = () => {
             >
               <UserRegistration />
             </Tab>
-          )}
+          )} */}
         </RoutableTabs>
       </PageSection>
     </FormProvider>

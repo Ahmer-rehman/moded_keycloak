@@ -3,7 +3,7 @@ import type { Path } from "react-router-dom";
 import { generateEncodedPath } from "../../utils/generateEncodedPath";
 import type { AppRouteObject } from "../../routes";
 
-export type EventsTab = "user-events" | "admin-events";
+export type EventsTab = "admin-events";
 
 export type EventsParams = {
   realm: string;

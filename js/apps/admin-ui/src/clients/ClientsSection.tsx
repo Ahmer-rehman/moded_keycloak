@@ -188,7 +188,7 @@ export default function ClientsSection() {
     <>
       <ViewHeader
         titleKey="clientList"
-        subKey="clientsExplain"
+        subKey=""
         helpUrl={helpUrls.clientsUrl}
         divider={false}
       />

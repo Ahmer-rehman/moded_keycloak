@@ -107,17 +107,17 @@ export default function EditUser() {
   const [activeEventsTab, setActiveEventsTab] = useState("userEvents");
 
   const settingsTab = useRoutableTab(toTab("settings"));
-  const attributesTab = useRoutableTab(toTab("attributes"));
+  // const attributesTab = useRoutableTab(toTab("attributes"));
   const credentialsTab = useRoutableTab(toTab("credentials"));
   const roleMappingTab = useRoutableTab(toTab("role-mapping"));
-  const groupsTab = useRoutableTab(toTab("groups"));
-  const organizationsTab = useRoutableTab(toTab("organizations"));
-  const consentsTab = useRoutableTab(toTab("consents"));
-  const identityProviderLinksTab = useRoutableTab(
-    toTab("identity-provider-links"),
-  );
+  // const groupsTab = useRoutableTab(toTab("groups"));
+  // const organizationsTab = useRoutableTab(toTab("organizations"));
+  // const consentsTab = useRoutableTab(toTab("consents"));
+  // const identityProviderLinksTab = useRoutableTab(
+  //   toTab("identity-provider-links"),
+  // );
   const sessionsTab = useRoutableTab(toTab("sessions"));
-  const eventsTab = useRoutableTab(toTab("events"));
+  // const eventsTab = useRoutableTab(toTab("events"));
 
   useFetch(
     async () =>
@@ -364,7 +364,7 @@ export default function EditUser() {
                   />
                 </PageSection>
               </Tab>
-              {isUnmanagedAttributesEnabled && (
+              {/* {isUnmanagedAttributesEnabled && (
                 <Tab
                   data-testid="attributesTab"
                   title={<TabTitleText>{t("attributes")}</TabTitleText>}
@@ -372,7 +372,7 @@ export default function EditUser() {
                 >
                   <UserAttributes user={user} save={save} upConfig={upConfig} />
                 </Tab>
-              )}
+              )} */}
               <Tab
                 data-testid="credentials"
                 isHidden={!user.access?.view}
@@ -381,15 +381,15 @@ export default function EditUser() {
               >
                 <UserCredentials user={user} setUser={setUser} />
               </Tab>
-              <Tab
+              {/* <Tab
                 data-testid="role-mapping-tab"
                 isHidden={!user.access?.view}
                 title={<TabTitleText>{t("roleMapping")}</TabTitleText>}
                 {...roleMappingTab}
               >
                 <UserRoleMapping id={user.id!} name={user.username!} />
-              </Tab>
-              {hasAccess("query-groups") && (
+              </Tab> */}
+              {/* {hasAccess("query-groups") && (
                 <Tab
                   data-testid="user-groups-tab"
                   title={<TabTitleText>{t("groups")}</TabTitleText>}
@@ -397,8 +397,8 @@ export default function EditUser() {
                 >
                   <UserGroups user={user} />
                 </Tab>
-              )}
-              {showOrganizations && realmHasOrganizations && (
+              )} */}
+              {/* {showOrganizations && realmHasOrganizations && (
                 <Tab
                   data-testid="user-organizations-tab"
                   title={<TabTitleText>{t("organizations")}</TabTitleText>}
@@ -406,15 +406,15 @@ export default function EditUser() {
                 >
                   <Organizations user={user} />
                 </Tab>
-              )}
-              <Tab
+              )} */}
+              {/* <Tab
                 data-testid="user-consents-tab"
                 title={<TabTitleText>{t("consents")}</TabTitleText>}
                 {...consentsTab}
               >
                 <UserConsents />
-              </Tab>
-              <Tab
+              </Tab> */}
+              {/* <Tab
                 data-testid="identity-provider-links-tab"
                 title={
                   <TabTitleText>{t("identityProviderLinks")}</TabTitleText>
@@ -422,7 +422,7 @@ export default function EditUser() {
                 {...identityProviderLinksTab}
               >
                 <UserIdentityProviderLinks userId={user.id!} />
-              </Tab>
+              </Tab> */}
               <Tab
                 data-testid="user-sessions-tab"
                 title={<TabTitleText>{t("sessions")}</TabTitleText>}
@@ -430,7 +430,7 @@ export default function EditUser() {
               >
                 <UserSessions />
               </Tab>
-              {hasAccess("view-events") && (
+              {/* {hasAccess("view-events") && (
                 <Tab
                   data-testid="events-tab"
                   title={<TabTitleText>{t("events")}</TabTitleText>}
@@ -454,7 +454,7 @@ export default function EditUser() {
                     </Tab>
                   </Tabs>
                 </Tab>
-              )}
+              )} */}
             </RoutableTabs>
           </FormProvider>
         </UserProfileProvider>

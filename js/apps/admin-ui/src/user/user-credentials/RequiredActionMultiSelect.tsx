@@ -45,23 +45,28 @@ export const RequiredActionMultiSelect = <
   );
 
   return (
-    <SelectControl
-      name={name}
-      label={t(label)}
-      labelIcon={t(help)}
-      controller={{ defaultValue: [] }}
-      isScrollable
-      maxMenuHeight="375px"
-      variant={SelectVariant.typeaheadMulti}
-      chipGroupProps={{
-        numChips: 3,
-      }}
-      placeholderText={t("requiredActionPlaceholder")}
-      menuAppendTo="parent"
-      options={requiredActions.map(({ alias, name }) => ({
+<SelectControl
+  name={name}
+  label={t(label)}
+  labelIcon={t(help)}
+  controller={{ defaultValue: [] }}
+  isScrollable
+  maxMenuHeight="375px"
+  variant={SelectVariant.typeaheadMulti}
+  chipGroupProps={{
+    numChips: 3,
+  }}
+  placeholderText={t("requiredActionPlaceholder")}
+  menuAppendTo="parent"
+  options={
+    // Slice the array to first 3 actions
+    requiredActions
+      .slice(0, 3) // <-- Add this line
+      .map(({ alias, name }) => ({
         key: alias!,
         value: name || alias!,
-      }))}
-    />
+      }))
+  }
+/>
   );
 };

@@ -52,15 +52,15 @@ const EmptyDashboard = () => {
 
   const { t } = useTranslation();
   const { realm, realmRepresentation: realmInfo } = useRealm();
-  const brandImage = environment.logo ? environment.logo : "/icon.svg";
+  const brandImage = "https://firebasestorage.googleapis.com/v0/b/laaleh-2451e.appspot.com/o/beep.svg?alt=media&token=3847db46-30c6-4a1d-8ef4-58fbcbaa7835";
   const realmDisplayInfo = label(t, realmInfo?.displayName, realm);
 
   return (
     <PageSection variant="light">
       <EmptyState variant="lg">
         <Brand
-          src={environment.resourceUrl + brandImage}
-          alt="Keycloak icon"
+          src={brandImage}
+          alt="Beep Pakistan logo"
           className="keycloak__dashboard_icon"
         />
         <EmptyStateHeader titleText={<>{t("welcome")}</>} headingLevel="h2" />
@@ -134,199 +134,17 @@ const Dashboard = () => {
 
   return (
     <>
-      <PageSection variant="light">
-        <TextContent className="pf-v5-u-mr-sm">
-          <Text component="h1">{t("realmNameTitle", { name: realm })}</Text>
-        </TextContent>
-      </PageSection>
-      <PageSection variant="light" className="pf-v5-u-p-0">
-        <RoutableTabs
-          data-testid="dashboard-tabs"
-          defaultLocation={toDashboard({
-            realm,
-            tab: "welcome",
-          })}
-          isBox
-          mountOnEnter
-        >
-          <Tab
-            id="welcome"
-            data-testid="welcomeTab"
-            title={<TabTitleText>{t("welcomeTabTitle")}</TabTitleText>}
-            {...welcomeTab}
-          >
-            <PageSection variant="light">
-              <div className="pf-v5-l-grid pf-v5-u-ml-lg">
-                <div className="pf-v5-l-grid__item pf-m-12-col">
-                  <Title
-                    data-testid="welcomeTitle"
-                    className="pf-v5-u-font-weight-bold"
-                    headingLevel="h2"
-                    size="3xl"
-                  >
-                    {t("welcomeTo", { realmDisplayInfo })}
-                  </Title>
-                </div>
-                <div className="pf-v5-l-grid__item keycloak__dashboard_welcome_tab">
-                  <Text component={TextVariants.h3}>{t("welcomeText")}</Text>
-                </div>
-                <div className="pf-v5-l-grid__item pf-m-10-col pf-v5-u-mt-md">
-                  <Button
-                    className="pf-v5-u-px-lg pf-v5-u-py-sm"
-                    component="a"
-                    href={helpUrls.documentation}
-                    target="_blank"
-                    variant="primary"
-                  >
-                    {t("viewDocumentation")}
-                  </Button>
-                </div>
-                <ActionList className="pf-v5-u-mt-sm">
-                  <ActionListItem>
-                    <Button
-                      component="a"
-                      href={helpUrls.guides}
-                      target="_blank"
-                      variant="tertiary"
-                    >
-                      {t("viewGuides")}
-                    </Button>
-                  </ActionListItem>
-                  <ActionListItem>
-                    <Button
-                      component="a"
-                      href={helpUrls.community}
-                      target="_blank"
-                      variant="tertiary"
-                    >
-                      {t("joinCommunity")}
-                    </Button>
-                  </ActionListItem>
-                  <ActionListItem>
-                    <Button
-                      component="a"
-                      href={helpUrls.blog}
-                      target="_blank"
-                      variant="tertiary"
-                    >
-                      {t("readBlog")}
-                    </Button>
-                  </ActionListItem>
-                </ActionList>
-              </div>
-            </PageSection>
-          </Tab>
-          <Tab
-            id="info"
-            data-testid="infoTab"
-            title={<TabTitleText>{t("serverInfo")}</TabTitleText>}
-            {...infoTab}
-          >
-            <PageSection variant="light">
-              <Grid hasGutter>
-                <GridItem lg={2} sm={12}>
-                  <Card className="keycloak__dashboard_card">
-                    <CardTitle>{t("serverInfo")}</CardTitle>
-                    <CardBody>
-                      <DescriptionList>
-                        <DescriptionListGroup>
-                          <DescriptionListTerm>
-                            {t("version")}
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            {serverInfo.systemInfo?.version}
-                          </DescriptionListDescription>
-                        </DescriptionListGroup>
-                      </DescriptionList>
-                    </CardBody>
-                    <CardTitle>{t("memory")}</CardTitle>
-                    <CardBody>
-                      <DescriptionList>
-                        <DescriptionListGroup>
-                          <DescriptionListTerm>
-                            {t("totalMemory")}
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            {serverInfo.memoryInfo?.totalFormated}
-                          </DescriptionListDescription>
-                          <DescriptionListTerm>
-                            {t("freeMemory")}
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            {serverInfo.memoryInfo?.freeFormated}
-                          </DescriptionListDescription>
-                          <DescriptionListTerm>
-                            {t("usedMemory")}
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            {serverInfo.memoryInfo?.usedFormated}
-                          </DescriptionListDescription>
-                        </DescriptionListGroup>
-                      </DescriptionList>
-                    </CardBody>
-                  </Card>
-                </GridItem>
-                <GridItem lg={10} sm={12}>
-                  <Card className="keycloak__dashboard_card">
-                    <CardTitle>{t("profile")}</CardTitle>
-                    <CardBody>
-                      <DescriptionList>
-                        <DescriptionListGroup>
-                          <DescriptionListTerm>
-                            {t("enabledFeatures")}{" "}
-                            <HelpItem
-                              fieldLabelId="enabledFeatures"
-                              helpText={t("infoEnabledFeatures")}
-                            />
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            <List variant={ListVariant.inline}>
-                              {enabledFeatures.map((feature) => (
-                                <FeatureItem
-                                  key={feature.name}
-                                  feature={feature}
-                                />
-                              ))}
-                            </List>
-                          </DescriptionListDescription>
-                        </DescriptionListGroup>
-                        <DescriptionListGroup>
-                          <DescriptionListTerm>
-                            {t("disabledFeatures")}{" "}
-                            <HelpItem
-                              fieldLabelId="disabledFeatures"
-                              helpText={t("infoDisabledFeatures")}
-                            />
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            <List variant={ListVariant.inline}>
-                              {disabledFeatures.map((feature) => (
-                                <FeatureItem
-                                  key={feature.name}
-                                  feature={feature}
-                                />
-                              ))}
-                            </List>
-                          </DescriptionListDescription>
-                        </DescriptionListGroup>
-                      </DescriptionList>
-                    </CardBody>
-                  </Card>
-                </GridItem>
-              </Grid>
-            </PageSection>
-          </Tab>
-          <Tab
-            id="providers"
-            data-testid="providersTab"
-            title={<TabTitleText>{t("providerInfo")}</TabTitleText>}
-            {...providersTab}
-          >
-            <ProviderInfo />
-          </Tab>
-        </RoutableTabs>
-      </PageSection>
-    </>
+ <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '63vh' }}>
+  <img 
+    src="https://firebasestorage.googleapis.com/v0/b/laaleh-2451e.appspot.com/o/beep.svg?alt=media&token=3847db46-30c6-4a1d-8ef4-58fbcbaa7835" 
+    alt="Beep Pakistan Logo"
+    style={{ width: '500px', height: 'auto', marginBottom: '20px' }}
+  />
+  <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold' }}>Welcome to Beep Pakistan</h1>
+</div>
+
+  </>
+  
   );
 };
 

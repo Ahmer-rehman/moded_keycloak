@@ -284,6 +284,7 @@ export const Applications = () => {
         ))}
       </DataList>
     </Page>
+    
   );
 };
 

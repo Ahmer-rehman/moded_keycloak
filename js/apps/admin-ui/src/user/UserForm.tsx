@@ -291,7 +291,7 @@ export const UserForm = ({
             <TextControl name="lastName" label={t("lastName")} />
           </>
         )}
-        {isBruteForceProtected && (
+        {/* {isBruteForceProtected && (
           <FormGroup
             label={t("temporaryLocked")}
             fieldId="temporaryLocked"
@@ -359,7 +359,7 @@ export const UserForm = ({
               <FormErrorText message={t("required")} />
             )}
           </FormGroup>
-        )}
+        )} */}
       </FormProvider>
       <FixedButtonsGroup
         name="user-creation"

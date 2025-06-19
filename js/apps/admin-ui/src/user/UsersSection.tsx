@@ -38,12 +38,7 @@ export default function UsersSection() {
 
   return (
     <>
-      <ViewHeader
-        titleKey="titleUsers"
-        subKey="usersExplain"
-        helpUrl={helpUrls.usersUrl}
-        divider={false}
-      />
+  
       <PageSection
         data-testid="users-page"
         variant="light"

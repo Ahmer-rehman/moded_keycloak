@@ -28,10 +28,10 @@ export const SigningInRoute: RouteObject = {
   element: <SigningIn />,
 };
 
-export const ApplicationsRoute: RouteObject = {
-  path: "applications",
-  element: <Applications />,
-};
+// export const ApplicationsRoute: RouteObject = {
+//   path: "applications",
+//   element: <Applications />,
+// };
 
 export const GroupsRoute: RouteObject = {
   path: "groups",
@@ -73,7 +73,7 @@ export const routes: RouteObject[] = [
   DeviceActivityRoute,
   LinkedAccountsRoute,
   SigningInRoute,
-  ApplicationsRoute,
+  
   GroupsRoute,
   OrganizationsRoute,
   PersonalInfoRoute,

@@ -105,7 +105,7 @@ public class WelcomePageTest {
         loginPage.fillLogin("admin", "admin");
         loginPage.submit();
 
-        Assertions.assertEquals(driver.getTitle(), "Beep Auth Administration Console");
+        Assertions.assertEquals(driver.getTitle(), "Beep Administration Console");
     }
 
     /**
@@ -137,7 +137,7 @@ public class WelcomePageTest {
     }
 
     private void assertOnAdminConsole() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> driver.getTitle().equals("Beep auth Administration Console") || driver.getTitle().equals("Sign in to Keycloak"));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> driver.getTitle().equals("Avereox Administration Console") || driver.getTitle().equals("Sign in to Keycloak"));
     }
 
     private URL getFakeLoginRedirect() throws MalformedURLException {

@@ -19,7 +19,7 @@ export default function EventsSection() {
   const { t } = useTranslation();
   const { realm } = useRealm();
 
-  const userEventsTab = useRoutableTab(toEvents({ realm, tab: "user-events" }));
+  // const userEventsTab = useRoutableTab(toEvents({ realm, tab: "user-events" }));
   const adminEventsTab = useRoutableTab(
     toEvents({ realm, tab: "admin-events" }),
   );
@@ -44,14 +44,14 @@ export default function EventsSection() {
       <PageSection variant="light" className="pf-v5-u-p-0">
         <RoutableTabs
           isBox
-          defaultLocation={toEvents({ realm, tab: "user-events" })}
+          // defaultLocation={toEvents({ realm, tab: "user-events" })}
         >
-          <Tab
+          {/* <Tab
             title={<TabTitleText>{t("userEvents")}</TabTitleText>}
             {...userEventsTab}
           >
             <UserEvents />
-          </Tab>
+          </Tab> */}
           <Tab
             title={<TabTitleText>{t("adminEvents")}</TabTitleText>}
             data-testid="admin-events-tab"

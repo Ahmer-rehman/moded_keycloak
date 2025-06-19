@@ -47,25 +47,6 @@ export const HelpHeader = () => {
     </DropdownItem>,
   ];
   return (
-    <Dropdown
-      popperProps={{
-        position: "right",
-      }}
-      onOpenChange={(isOpen) => setOpen(isOpen)}
-      isOpen={open}
-      toggle={(ref) => (
-        <MenuToggle
-          ref={ref}
-          variant="plain"
-          onClick={() => setOpen(!open)}
-          aria-label="Help"
-          id="help"
-        >
-          <HelpIcon />
-        </MenuToggle>
-      )}
-    >
-      <DropdownList>{dropdownItems}</DropdownList>
-    </Dropdown>
+    <></>
   );
 };

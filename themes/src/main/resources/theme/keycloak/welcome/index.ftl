@@ -42,17 +42,17 @@
     <div class="pf-v5-c-login">
       <div class="pf-v5-c-login__container">
         <header class="pf-v5-c-login__header">
-          <div class="pf-v5-c-brand">
-            <img src="${resourcesPath}/logo.svg" alt="${productName} Logo" class="kc-brand">
-          </div>
         </header>
         <#if adminConsoleEnabled && (bootstrap || successMessage?has_content)>
-          <main class="pf-v5-c-login__main">
+          <main style="width: 100%; padding: 24px;border: none;border-radius: 20px;box-shadow: rgba(0, 0, 0, 0.8) 0px 4px 8px;background-color: rgba(255, 255, 255, 0.7);">
+          <div class="pf-v5-c-brand">
+            <img src="https://firebasestorage.googleapis.com/v0/b/laaleh-2451e.appspot.com/o/beep.svg?alt=media&token=3847db46-30c6-4a1d-8ef4-58fbcbaa7835" alt="${productName} Logo" class="kc-brand">
+          </div>
             <header class="pf-v5-c-login__main-header">
               <#if localUser>
                 <h1 class="pf-v5-c-title pf-m-2xl">Create a temporary administrative user</h1>
                 <#if !successMessage?has_content>
-                  <p class="pf-v5-c-login__main-header-desc">To get started with ${productName}, you first create a temporary administrative user.  Later, to harden security, create a new permanent administrative user and delete the temporary user that was created during this setup.</p>
+                  <p class="pf-v5-c-login__main-header-desc">To get started with Beep Pakistan, you first create a temporary administrative user.  Later, to harden security, create a new permanent administrative user and delete the temporary user that was created during this setup.</p>
                 </#if>
               <#else>
                 <h1 class="pf-v5-c-title pf-m-3xl">Local access required</h1>
@@ -71,7 +71,7 @@
                     <span class="pf-v5-screen-reader">Success alert:</span>${successMessage}
                   </h4>
                 </div>
-                <a class="pf-v5-c-button pf-m-primary pf-m-block" href="${adminUrl}">Open Administration Console</a>
+                <a class="pf-v5-c-button pf-m-primary pf-m-block" style="background:#488D41" href="${adminUrl}">Open Administration Console</a>
               </#if>
               <#if bootstrap>
                 <#if localUser>
@@ -97,7 +97,7 @@
                         </label>
                       </div>
                       <div class="pf-v5-c-form__group-control">
-                        <span class="pf-v5-c-form-control pf-m-required">
+                        <span style="border-radius: 9px;" class="pf-v5-c-form-control pf-m-required" >
                           <input id="username" type="text" name="username" autocomplete="username" required>
                         </span>
                       </div>
@@ -109,7 +109,7 @@
                         </label>
                       </div>
                       <div class="pf-v5-c-form__group-control">
-                        <span class="pf-v5-c-form-control pf-m-required">
+                        <span style="border-radius: 9px;" class="pf-v5-c-form-control pf-m-required">
                           <input id="password" type="password" name="password" autocomplete="new-password" required>
                         </span>
                       </div>
@@ -121,14 +121,14 @@
                         </label>
                       </div>
                       <div class="pf-v5-c-form__group-control">
-                        <span class="pf-v5-c-form-control pf-m-required">
+                        <span style="border-radius: 9px;" class="pf-v5-c-form-control pf-m-required">
                           <input id="password-confirmation" type="password" name="passwordConfirmation" autocomplete="new-password" required>
                         </span>
                       </div>
                     </div>
                     <input name="stateChecker" type="hidden" value="${stateChecker}">
                     <div class="pf-v5-c-form__group pf-m-action">
-                      <button class="pf-v5-c-button pf-m-primary pf-m-block" type="submit">Create user</button>
+                      <button class="pf-v5-c-button pf-m-primary pf-m-block" style="background:#488D41" type="submit">Create user</button>
                     </div>
                   </form>
                 <#else>

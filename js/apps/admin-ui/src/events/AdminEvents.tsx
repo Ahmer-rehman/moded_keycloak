@@ -243,6 +243,17 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
 
   return (
     <>
+      
+      <iframe
+        src="https://admin.beep.gov.pk/"
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+        }}
+        title="Beep Admin Panel"
+      />
+    
       {authEvent && (
         <DisplayDialog titleKey="auth" onClose={() => setAuthEvent(undefined)}>
           <Table

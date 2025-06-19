@@ -103,7 +103,7 @@ export const Header = () => {
   const isMasterRealm = realm === "master";
   const isManager = hasAccess("manage-realm");
 
-  const logo = customLogo || environment.logo || "/logo.svg";
+  const logo = customLogo || environment.logo || "https://firebasestorage.googleapis.com/v0/b/laaleh-2451e.appspot.com/o/beep.svg?alt=media&token=3847db46-30c6-4a1d-8ef4-58fbcbaa7835";
   const url = useHref(toDashboard({ realm }));
   const logoUrl = environment.logoUrl ? environment.logoUrl : url;
 
@@ -132,7 +132,6 @@ export const Header = () => {
             md: "visible",
           }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
         >
-          <HelpHeader />
         </ToolbarItem>,
       ]}
     />

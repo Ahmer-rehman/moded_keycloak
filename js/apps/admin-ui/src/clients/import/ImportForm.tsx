@@ -99,7 +99,7 @@ export default function ImportForm() {
 
   return (
     <>
-      <ViewHeader titleKey="importClient" subKey="clientsExplain" />
+      <ViewHeader titleKey="importClient" subKey="" />
       <PageSection variant="light">
         <FormAccess
           isHorizontal

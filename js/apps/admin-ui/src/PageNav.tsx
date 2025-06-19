@@ -99,9 +99,9 @@ export const PageNav = () => {
             <NavGroup aria-label={t("manage")} title={t("manage")}>
               {isFeatureEnabled(Feature.Organizations) &&
                 realmRepresentation?.organizationsEnabled && (
-                  <LeftNav title="organizations" path="/organizations" />
+                  <LeftNav title="users" path="/users" />
                 )}
-              <LeftNav title="clients" path="/clients" />
+              {/* <LeftNav title="clients" path="/clients" /> */}
               {/* <LeftNav title="clientScopes" path="/client-scopes" /> */}
               {/* <LeftNav title="realmRoles" path="/roles" /> */}
               <LeftNav title="users" path="/users" />
@@ -111,10 +111,10 @@ export const PageNav = () => {
             </NavGroup>
           )}
 
-          {/* {showConfigure && (
+           {showConfigure && (
             <NavGroup aria-label={t("configure")} title={t("configure")}>
-              <LeftNav title="realmSettings" path="/realm-settings" />
-              <LeftNav title="authentication" path="/authentication" />
+              <LeftNav title="SMTP Configurations" path="/realm-settings" />
+              {/* <LeftNav title="authentication" path="/authentication" />
               {isFeatureEnabled(Feature.AdminFineGrainedAuthzV2) &&
                 realmRepresentation?.adminPermissionsEnabled && (
                   <LeftNav title="permissions" path="/permissions" />
@@ -129,9 +129,9 @@ export const PageNav = () => {
                     path={toPage({ providerId: p.id }).pathname!}
                     id="/page-section"
                   />
-                ))}
+                ))} */}
             </NavGroup>
-          )} */}
+          )} 
         </Nav>
       </PageSidebarBody>
     </PageSidebar>

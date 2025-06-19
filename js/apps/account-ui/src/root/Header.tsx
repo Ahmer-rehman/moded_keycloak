@@ -37,7 +37,7 @@ export const Header = () => {
   const { environment, keycloak } = useEnvironment();
   const { t } = useTranslation();
 
-  const brandImage = environment.logo || "logo.svg";
+  const brandImage = environment.logo || "https://firebasestorage.googleapis.com/v0/b/laaleh-2451e.appspot.com/o/beep.svg?alt=media&token=3847db46-30c6-4a1d-8ef4-58fbcbaa7835";
   const logoUrl = environment.logoUrl ? environment.logoUrl : "/";
   const internalLogoHref = useHref(logoUrl);
 
@@ -45,19 +45,6 @@ export const Header = () => {
   const indexHref = logoUrl.startsWith("/") ? internalLogoHref : logoUrl;
 
   return (
-    <KeycloakMasthead
-      data-testid="page-header"
-      keycloak={keycloak}
-      features={{ hasManageAccount: false }}
-      brand={{
-        href: indexHref,
-        src: brandImage.startsWith("/")
-          ? joinPath(environment.resourceUrl, brandImage)
-          : brandImage,
-        alt: t("logo"),
-        className: style.brand,
-      }}
-      toolbarItems={[<ReferrerLink key="link" />]}
-    />
+      <></>
   );
 };

@@ -100,7 +100,7 @@ export default function NewClientForm() {
   const title = t("createClient");
   return (
     <>
-      <ViewHeader titleKey="createClient" subKey="clientsExplain" />
+      <ViewHeader titleKey="createClient" subKey="" />
       <PageSection variant="light">
         <FormProvider {...form}>
           <Wizard
